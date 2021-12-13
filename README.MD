@@ -12,22 +12,12 @@ files, so that BREAD data can be easily seeded.
 
 ### Installation
 
-```composer require drudge-rajen/voyager-deployment-orchestrator```
+```composer require sohag-pro/voyager-deployment-orchestrator```
 
 Then publish the default config and seeder file.
 
 ```
 php artisan vendor:publish --provider="DrudgeRajen\VoyagerDeploymentOrchestrator\VoyagerDeploymentOrchestratorServiceProvider"
-```
-
-Next, open the `config/voyager-deployment-orchestrator.php` and add the tables name of which BREAD seeders will be generated.
-
-```
-return [
-    'tables' => [
-        users
-    ],
-];
 ```
 
 After Publishing the `VoyagerDeploymentOrchestratorSeeder` class file,

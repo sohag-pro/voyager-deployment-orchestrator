@@ -15,9 +15,6 @@ class VoyagerDeploymentOrchestratorServiceProvider extends ServiceProvider
             'seeds' => [
                 "{$publishablePath}/database/seeds/" => database_path('seeds/breads'),
             ],
-            'config' => [
-                "{$publishablePath}/config/voyager-deployment-orchestrator.php" => config_path('voyager-deployment-orchestrator.php'),
-            ],
         ];
 
         foreach ($publishable as $group => $paths) {
