@@ -12,6 +12,16 @@ files, so that BREAD data can be easily seeded.
 
 ### Installation
 
+Add this in your ```composer.json``` file
+```
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/sohag-pro/voyager-deployment-orchestrator.git"
+        }
+    ]
+```
+
 ```composer require sohag-pro/voyager-deployment-orchestrator```
 
 Then publish the default config and seeder file.
