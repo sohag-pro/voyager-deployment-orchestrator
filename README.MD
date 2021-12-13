@@ -22,6 +22,9 @@ Add this in your ```composer.json``` file
     ]
 ```
 
+
+Then run this command:
+
 ```composer require sohag-pro/voyager-deployment-orchestrator```
 
 Then publish the default config and seeder file.
