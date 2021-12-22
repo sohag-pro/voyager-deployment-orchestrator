@@ -200,11 +200,11 @@ TXT;
 
             $breadRowAddedClass = $toBeDeletedClassName . FileGenerator::ROW_SEEDER_SUFFIX;
 
-            $content = str_replace("\$this->seed({$breadTypeAddedClass}::class);", '', $content);
-            $content = str_replace("\$this->seed({$breadRowAddedClass}::class);", '', $content);
+            $content = str_replace("\$this->call({$breadTypeAddedClass}::class);", '', $content);
+            $content = str_replace("\$this->call({$breadRowAddedClass}::class);", '', $content);
         }
 
-        if (strpos($content, "\$this->seed({$className}::class)") === false) {
+        if (strpos($content, "\$this->call({$className}::class)") === false) {
             if (
                 strpos($content, '#orchestraseeder_start') &&
                 strpos($content, '#orchestraseeder_end') &&
@@ -212,13 +212,13 @@ TXT;
             ) {
                 $content = preg_replace(
                     "/(\#orchestraseeder_start.+?)(\#orchestraseeder_end)/us",
-                    "$1\$this->seed({$className}::class);{$this->newLineCharacter}{$this->indentCharacter}{$this->indentCharacter}$2",
+                    "$1\$this->call({$className}::class);{$this->newLineCharacter}{$this->indentCharacter}{$this->indentCharacter}$2",
                     $content
                 );
             } else {
                 $content = preg_replace(
                     "/(run\(\).+?)}/us",
-                    "$1{$this->indentCharacter}\$this->seed({$className}::class);{$this->newLineCharacter}{$this->indentCharacter}}",
+                    "$1{$this->indentCharacter}\$this->call({$className}::class);{$this->newLineCharacter}{$this->indentCharacter}}",
                     $content
                 );
             }
